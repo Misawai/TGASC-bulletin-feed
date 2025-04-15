@@ -4,6 +4,12 @@
 
 set -e
 
+if [ "$(<./status)" == "true" ]; then
+	echo "exit"
+	exit 0;
+fi
+
+
 # read the latest bulletin
 latest=$(<./latest)
 
