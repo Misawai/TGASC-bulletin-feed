@@ -38,3 +38,5 @@ sed -i -e '$a\' message.txt
 
 # append links at the end of message
 paste <(htmlq -t a <./temp2.txt) <(htmlq -a href a <./temp2.txt) >>message.txt
+
+cat message.txt
