@@ -24,6 +24,9 @@ jobs:
 
       - name: Set execution permissions for scripts
         run: chmod +x ./updateLatest.sh ./fetch.sh ./broadcast.sh
+
+      - name: setup-htmlq
+        uses: remarkablemark/setup-htmlq@v2.1.4
         
       - name: check bulletin update
         run: ./updateLatest.sh
