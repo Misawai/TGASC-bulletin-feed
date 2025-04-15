@@ -25,7 +25,11 @@ JSON=$(jq -n \
       {
         type: "text",
         text: $text
-      }
+      },
+	  {
+		type: "text",
+		text: "test"
+	  }
     ]
   }')
   
