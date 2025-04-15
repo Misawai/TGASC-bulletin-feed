@@ -26,7 +26,7 @@ sed -i "1a\\" message.txt
 if [ -z "$(<./temp.txt htmlq article | htmlq -r div.column.full -t | tr -d '\n''\t')" ]; then \
 # if after remove div.column.full still have any character, consider as pure article, without any links
 	<./temp.txt htmlq article -p -t| tr -s '\n''\t' >>message.txt
-	cat message.txt
+	cat message.txt 2>&3
 	exit 0;# exit successfully
 else <./temp.txt htmlq article | htmlq -r div.column.full -t | tr -s '\n''\t' | sed '1{/^[[:space:]]*$/d}; ${/^[[:space:]]*$/d}; s/^[[:space:]]*//; s/[[:space:]]*$//' >>message.txt;
 fi
@@ -40,4 +40,4 @@ sed -i -e '$a\' message.txt
 # append links at the end of message
 paste <(htmlq -t a <./temp2.txt) <(htmlq -a href a <./temp2.txt) >>message.txt
 
-cat message.txt
+cat message.txt 2>&3
