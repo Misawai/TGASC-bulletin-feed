@@ -10,14 +10,19 @@ if [ "$(<./status)" == "true" ]; then
 	exit 0;
 fi
 
+MESSAGE=$(<./message.txt)
+JSON=$(jq -n \
+  --arg text "$MESSAGE" \
+  '{
+    messages: [
+      {
+        type: "text",
+        text: $text
+      }
+    ]
+  }')
+
 curl -v -X POST https://api.line.me/v2/bot/message/broadcast \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer $1 ' \
--d '{
-	"messages":[
-		{
-           "type":"text",
-		   "text":"$(<./message.txt)"
-		}
-	]
-}'
+-d "$JSON"
