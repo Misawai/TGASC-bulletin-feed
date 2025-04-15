@@ -27,6 +27,8 @@ jobs:
 
       - name: setup-htmlq
         uses: remarkablemark/setup-htmlq@v2.1.4
+      - name: install jq
+        run: sudo apt-get install jq
         
       - name: check bulletin update
         run: ./updateLatest.sh
