@@ -4,23 +4,34 @@
 
 set -e
 
+# read the latest bulletin
 latest=$(<./latest)
 
-echo ${latest}
+# get the latest paragraph
+curl -s https://www.scout.org.tw/news_detail/${latest} >temp.txt 
 
-curl -s https://www.scout.org.tw/news_detail/${latest} >temp.txt # get the latest paragraph
-
+# read title
 <./temp.txt htmlq -t h1 | tr -d '\n''\t' >message.txt
 
-sed -i "1a\\" message.txt # add new line after reading title.
+# add new line after reading title
+sed -i "1a\\" message.txt
 
-<./temp.txt htmlq article | htmlq -r div.column.full -t | tr -d '\n''\t'
-
+# conditional statement for distinguishing if the new bulletin is a pure article or not
 if [ -z "$(<./temp.txt htmlq article | htmlq -r div.column.full -t | tr -d '\n''\t')" ]; then \
-# if after remove div.column.full still have character, consider as pure article, without any links.
-	<./temp.txt htmlq article -p -t| tr -s '\n''\t' >>message.txt;
-else <./temp.txt htmlq article | htmlq -r div.column.full -t | tr -d '\n''\t' >>message.txt;
+# if after remove div.column.full still have any character, consider as pure article, without any links
+	<./temp.txt htmlq article -p -t| tr -s '\n''\t' >>message.txt
+	exit 0;# exit successfully
+else <./temp.txt htmlq article | htmlq -r div.column.full -t | tr -s '\n''\t' | sed '1{/^[[:space:]]*$/d}; ${/^[[:space:]]*$/d}; s/^[[:space:]]*//; s/[[:space:]]*$//' >>message.txt;
 fi
-# <./temp.txt htmlq article | htmlq div.column.full
+
+# prepeare for print out links
+<./temp.txt htmlq article | htmlq div.column.full >temp2.txt
+
+# add new line for prettify
+sed -i -e '$a\' message.txt
+
+# append links at the end of message
+paste <(htmlq -t a <./temp2.txt) <(htmlq -a href a <./temp2.txt) >>message.txt
+#<./temp.txt htmlq article | htmlq div.column.full | htmlq -a href a
 
 cat ./message.txt
