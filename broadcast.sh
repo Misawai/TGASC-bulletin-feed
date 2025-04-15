@@ -22,10 +22,6 @@ JSON=$(jq -n \
   --arg text "$MESSAGE" \
   '{
     messages: [
-      {
-        type: "text",
-        text: $text
-      },
 	  {
 		type: "text",
 		text: "test"
