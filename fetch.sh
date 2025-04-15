@@ -38,3 +38,8 @@ sed -i -e '$a\' message.txt
 
 # append links at the end of message
 paste <(htmlq -t a <./temp2.txt) <(htmlq -a href a <./temp2.txt) >>message.txt
+
+# add new line for prettify
+sed -i -e '$a\' message.txt
+
+echo "童軍總會官網公告連結: https://www.scout.org.tw/news_detail/${latest}" >>message.txt
