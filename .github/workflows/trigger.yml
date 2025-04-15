@@ -33,7 +33,10 @@ jobs:
       - name: fetch bulletin
         run: ./fetch.sh
       - name: broadcast to chatbot
-        run: ./broadcast.sh
+        - shell: bash
+            env:
+                TOKEN: ${{ secrets.LINE_OFFICIAL_ACCOUNT_CHANNEL_ACCESS_TOKEN }}
+            run: ./broadcast.sh "$TOKEN"
         
       - name: Add & Commit latest and status
         uses: EndBug/add-and-commit@v9.1.4
