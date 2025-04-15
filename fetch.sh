@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# main.sh
+# fetch.sh
 # Fetch bulletin of TGASC.
 
 set -e
@@ -32,6 +32,3 @@ sed -i -e '$a\' message.txt
 
 # append links at the end of message
 paste <(htmlq -t a <./temp2.txt) <(htmlq -a href a <./temp2.txt) >>message.txt
-#<./temp.txt htmlq article | htmlq div.column.full | htmlq -a href a
-
-cat ./message.txt
