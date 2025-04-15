@@ -15,6 +15,8 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
+ls
+
 MESSAGE=$(<./message.txt)
 JSON=$(jq -n \
   --arg text "$MESSAGE" \
