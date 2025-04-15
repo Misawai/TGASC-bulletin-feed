@@ -11,10 +11,10 @@ statusCode=$(curl -s -I https://www.scout.org.tw/news_detail/${latestnum} | grep
 
 if [ "$statusCode" == "404" ]; then
 	echo "Have reached to the latest bulletin."
-	echo "true" >./status
+	echo "true" >status
 	exit 0;
 else 
 	((latestnum++))
 	echo "$latestnum" >./latest
-	echo "false" >./status;
+	echo "false" >status;
 fi
