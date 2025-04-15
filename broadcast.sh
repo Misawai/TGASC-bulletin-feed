@@ -22,15 +22,12 @@ JSON=$(jq -n \
   --arg text "$MESSAGE" \
   '{
     messages: [
-	  {
-		type: "text",
-		text: "test"
-	  }
+      {
+        type: "text",
+        text: $text
+      }
     ]
   }')
-  
-echo "MESSAGE content: [$MESSAGE]"
-
 
 curl -v -X POST https://api.line.me/v2/bot/message/broadcast \
 -H "Content-Type: application/json" \
