@@ -42,4 +42,4 @@ paste <(htmlq -t a <./temp2.txt) <(htmlq -a href a <./temp2.txt) >>message.txt
 # add new line for prettify
 sed -i -e '$a\' message.txt
 
-echo "童軍總會官網公告連結: https://www.scout.org.tw/news_detail/${latest}" >>message.txt
+echo -e "童軍總會官網公告連結: https://www.scout.org.tw/news_detail/${latest}\n(本訊息擷自中華民國童軍總會官網，並由中華民國童軍總會官網公告通知小助手官方帳號提供)" >>message.txt
