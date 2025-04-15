@@ -36,13 +36,13 @@ jobs:
         run: ./fetch.sh
       - name: broadcast to chatbot
         env:
-          TOKEN: ${{ secrets.LINE_OFFICIAL_ACCOUNT_CHANNEL_ACCESS_TOKEN }}
-        run: ./broadcast.sh "$TOKEN"
+          CHANNEL_TOKEN: ${{ secrets.LINE_OFFICIAL_ACCOUNT_CHANNEL_ACCESS_TOKEN }}
+        run: ./broadcast.sh "$CHANNEL_TOKEN"
         
       - name: Add & Commit latest and status
         uses: EndBug/add-and-commit@v9.1.4
         with:
-          add: '["latest", "status"]'
+          add: '["latest"]'
           author_name: github-actions[bot]
           author_email: 69676474+Misawai@users.noreply.github.com
           message: 'Github Action automatic updates'
