@@ -32,9 +32,9 @@
 ## Usage
 
 1. Ensure your environment supports basic Bash shell scripting and the required shell script dependencies mentioned above are installed.
-2. Run `updateLatest.sh` to check for the latest bulletin issue.
-3. Run `fetch.sh` to retrieve the latest bulletin issue.
-4. Run `broadcast.sh` to send broadcast messages to chatbot services.
+2. Run `./updateLatest.sh` to check for the latest bulletin issue.
+3. Run `./fetch.sh` to retrieve the latest bulletin issue.
+4. Run `./broadcast.sh [token]` to send broadcast messages to chatbot services. The first argument `[token]` should be replaced by the "Channel access token" of your LINE Messaging API.
 
 ## Automation
 
@@ -77,9 +77,9 @@ This project uses **GitHub Actions** to schedule and automate tasks. Scripts wil
 ## 使用方式
 
 1. 確保使用的環境支援執行 Bash Shell 腳本，並已裝妥上述「環境需求 § Shell Script」一節中列出的套件。
-2. 執行 `updateLatest.sh` 檢查有無新公告。
-3. 執行 `fetch.sh` 擷取最新公告。
-4. 執行 `broadcast.sh` 將公告推播至其他平臺。
+2. 執行 `./updateLatest.sh` 檢查有無新公告。
+3. 執行 `./fetch.sh` 擷取最新公告。
+4. 執行 `./broadcast.sh [token]` 將公告推播至其他平臺。執行時第 1 個 argument (`[token]`) 請輸入欲傳送到的 LINE 官方帳號 Messaging API 的 Channel access token。
 
 ## 自動化作業
 
