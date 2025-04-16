@@ -1,7 +1,8 @@
-# TGASC Bulletin Feed -- The 8th Feed -- A non-official bulletin feed of TGASC website
+# TGASC Bulletin Feed – The 8th Feed – A non-official bulletin feed of TGASC website
 
 ###### 正體中文版說明請往下滑。Scroll down for Traditional Chinese version.
-**The 8th Feed** is a collection of shell scripts designed to fetch and manage bulletin announcements from the official website of The General Association of the Scouts of China (TAIWAN) (TGASC-TAIWAN), initiated by James Kuo-Ping Lo -- a member of the Rover Crew of St. Viator Catholic High School, Troop 8, Taichung City Council. This tool is useful for automatically retrieving and broadcasting updates, such as through a LINE Official Account.
+
+**The 8th Feed** is a collection of shell scripts designed to fetch and manage bulletin announcements from the official website of The General Association of the Scouts of China (TAIWAN) (TGASC-TAIWAN), initiated by James Kuo-Ping Lo – a member of the Rover Crew of St. Viator Catholic High School, Troop 8, Taichung City Council. This tool is useful for automatically retrieving and broadcasting updates, such as through a LINE Official Account.
 
 ## 📁 Project Structure
 
@@ -30,7 +31,7 @@
 
 ## ⚙️ Usage
 
-1. Make sure your environment supports basic Bash shell scripting.
+1. Make sure your environment supports basic Bash shell scripting, with Shell Scripts dependencies noted installed.
 2. Run `updateLatest.sh` to check for the latest bulletin. If exists, update `latest` .
 3. Run `fetch.sh` to retrieve the latest bulletin.
 4. Run `broadcast.sh` to send broadcast message to chatbot services.
@@ -52,7 +53,7 @@ This project uses **GitHub Actions** to schedule and automate tasks. Scripts wil
 
 - `updateLatest.sh` – 檢查有無新公告，並更新最新公告序號的快取檔。
 - `fetch.sh` – 從中華民國童軍總會官網擷取最新公告內容。
-- `broadcast.sh` – 將公告內容推播至其他平臺（如 LINE）。
+- `broadcast.sh` – 將公告內容推播至具備聊天機器人功能的平臺（如 LINE）。
 - `latest` – 儲存最新公告序號的快取檔案。
 - `.github/workflows/` – GitHub Actions 自動化流程設定。
 
@@ -67,7 +68,7 @@ This project uses **GitHub Actions** to schedule and automate tasks. Scripts wil
 - [`jq`](https://github.com/jqlang/jq)
 - [`sed`](https://www.gnu.org/software/sed/)
 
-### 🌊 Workflow
+### 🌊 自動化 Workflow
 
 - [`actions/checkout@v4`](https://github.com/actions/checkout)
 - [`EndBug/add-and-commit@v9.1.4`](https://github.com/EndBug/add-and-commit)
@@ -75,7 +76,7 @@ This project uses **GitHub Actions** to schedule and automate tasks. Scripts wil
 
 ## ⚙️ 使用方式
 
-1. 確保使用的環境支援 Bash Shell 腳本。
+1. 確保使用的環境支援 Bash Shell 腳本，並已裝妥上述「環境需求—— Shell Script ——」一節中列出的套件。
 2. 執行 `updateLatest.sh` 檢查有無新公告。若有，則更新快取內容。
 3. 執行 `fetch.sh` 擷取最新公告。
 4. 執行 `broadcast.sh` 將公告推播至其他平臺。
