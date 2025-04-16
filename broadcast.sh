@@ -41,8 +41,8 @@ LINEJSON=$(jq -n \
     ]
   }')
 
+
 echo "Sending message to Line API."
-echo "${MESSAGE}" >test.txt
 curl -v -X POST https://api.line.me/v2/bot/message/broadcast \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer $1 " \
