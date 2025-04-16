@@ -83,7 +83,7 @@ This project uses **GitHub Actions** to schedule and automate tasks. Scripts wil
 
 ## 自動化作業
 
-本專案透過 **GitHub Actions** 排程自動化執行腳本，每隔 10 分鐘抓取官網公告一次並更新快取，讓使用者無須手動操作即可取得最新資訊。
+本專案透過 **GitHub Actions** 排程自動化執行腳本，每隔 10 分鐘抓取官網公告一次並更新快取。使用者無須手動操作即可取得最新資訊。
 
 ## 貢獻者
 
