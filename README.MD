@@ -49,7 +49,7 @@ This project uses **GitHub Actions** to schedule and automate tasks. Scripts wil
 
 **8 乎你知——童軍總會官網公告非官方推播（The 8th Feed）** 由臺中市第 8 團私立衛道中學東君羅浮群 James Kuo-Ping Lo 伙伴開發，是一套用於自動擷取中華民國童軍總會官網公告資訊的 Bash Shell 腳本工具。本工具可以定期抓取公告，並配合 LINE 官方帳號等平臺推播使用。
 
-## 專案結構
+## 專案架構
 
 - `updateLatest.sh` – 檢查有無新公告，並更新最新公告序號的快取檔。
 - `fetch.sh` – 從中華民國童軍總會官網擷取最新公告內容。
