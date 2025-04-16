@@ -1,12 +1,12 @@
-# TGASC Bulletin Feed – The 8th Feed – A non-official bulletin feed of TGASC website
+# TGASC Bulletin Feed – The 8th Feed – An unofficial bulletin feed of the TGASC website
 
-###### 正體中文版說明請往下滑。Scroll down for Traditional Chinese version.
+###### 正體中文版說明請往下滑。Scroll down for the Traditional Chinese version.
 
-**The 8th Feed** is a collection of shell scripts designed to fetch and manage bulletin announcements from the official website of The General Association of the Scouts of China (TAIWAN) (TGASC-TAIWAN), initiated by James Kuo-Ping Lo – a member of the Rover Crew of St. Viator Catholic High School, Troop 8, Taichung City Council. This tool is useful for automatically retrieving and broadcasting updates, such as through a LINE Official Account.
+**The 8th Feed** is a collection of shell scripts designed to fetch and manage bulletin announcements from the official website of The General Association of the Scouts of China (Taiwan) (TGASC-Taiwan). It was initiated by James Kuo-Ping Lo, a member of the Rover Crew of St. Viator Catholic High School, Troop 8, Taichung City Council. It is helpful for automatically retrieving and broadcasting updates, for example, through a LINE Official Account.
 
 ## 📁 Project Structure
 
-- `updateLatest.sh` – Check for new bulletin and updates the cache with the latest issue ID.
+- `updateLatest.sh` – Checks for new bulletins and updates the cache with the latest issue ID.
 - `fetch.sh` – Fetches the latest bulletin issue from the TGASC website.
 - `broadcast.sh` –  Sends the latest bulletin issue to external platforms (e.g., LINE).
 - `latest` – Cache for the most recent bulletin ID.
@@ -31,14 +31,14 @@
 
 ## ⚙️ Usage
 
-1. Make sure your environment supports basic Bash shell scripting, with shell scripts dependencies noted installed.
+1. Ensure your environment supports basic Bash shell scripting and the required shell script dependencies mentioned above are installed.
 2. Run `updateLatest.sh` to check for the latest bulletin issue.
 3. Run `fetch.sh` to retrieve the latest bulletin issue.
-4. Run `broadcast.sh` to send broadcast message to chatbot services.
+4. Run `broadcast.sh` to send broadcast messages to chatbot services.
 
 ## 🔄 Automation
 
-This project uses **GitHub Actions** to schedule and automate tasks. Scripts will be executed every 10 minutes to ensure the bulletin feed stays up to date without manual effort.
+This project uses **GitHub Actions** to schedule and automate tasks. Scripts will be executed every 10 minutes to ensure the bulletin feed stays updated without manual effort.
 
 ## 👥 Contributors
 
@@ -47,7 +47,7 @@ This project uses **GitHub Actions** to schedule and automate tasks. Scripts wil
 ----
 # 8 乎你知——童軍總會官網公告非官方推播（The 8th Feed）
 
-**8 乎你知——童軍總會官網公告非官方推播（The 8th Feed）** 由臺中市第 8 團私立衛道中學東君羅浮群 James Kuo-Ping Lo 伙伴開發，是一套用於自動擷取中華民國童軍總會官網公告資訊的 Shell 腳本工具。這個工具可以定期抓取公告，並配合 LINE 官方帳號等平臺推播使用。
+**8 乎你知——童軍總會官網公告非官方推播（The 8th Feed）** 由臺中市第 8 團私立衛道中學東君羅浮群 James Kuo-Ping Lo 伙伴開發，是一套用於自動擷取中華民國童軍總會官網公告資訊的 Bash Shell 腳本工具。本工具可以定期抓取公告，並配合 LINE 官方帳號等平臺推播使用。
 
 ## 📁 專案結構
 
