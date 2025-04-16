@@ -18,7 +18,7 @@ latest=$(<./latest)
 
 # get the latest paragraph
 echo "Connecting to https://www.scout.org.tw/news_detail/${latest}..."
-curl -s https://www.scout.org.tw/news_detail/${latest} >temp.txt 
+curl -s https://www.scout.org.tw/news_detail/"${latest}" >temp.txt 
 
 # read title
 echo "Reading title."

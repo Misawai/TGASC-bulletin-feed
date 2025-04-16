@@ -11,7 +11,7 @@ latestnum=$(<./latest)
 echo "The latest issue ID in cache is #${latestnum}."
 
 echo "Connecting to https://www.scout.org.tw/news_detail/${latestnum}."
-statusCode=$(curl -s -I https://www.scout.org.tw/news_detail/${latestnum} | grep "^HTTP\/" | awk '{print $2}')
+statusCode=$(curl -s -I https://www.scout.org.tw/news_detail/"${latestnum}" | grep "^HTTP\/" | awk '{print $2}')
 
 if [ "${statusCode}" == "200" ]; then
 	((latestnum++))

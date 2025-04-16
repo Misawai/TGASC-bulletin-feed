@@ -27,7 +27,7 @@ echo "Reading message footer remaining."
 footer="Line 官方帳號提供)"
 
 echo "Combine message body and footer remaining."
-MESSAGE="${input}${footer}"
+MESSAGE="${input} ${footer}"
 
 echo "Creating JSON via jq."
 LINEJSON=$(jq -n \
