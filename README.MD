@@ -9,7 +9,7 @@
 - `updateLatest.sh` – Checks for new bulletins and updates the cache with the latest issue ID.
 - `fetch.sh` – Fetches the latest bulletin issue from the TGASC website.
 - `broadcast.sh` –  Sends the latest bulletin issue to external platforms (e.g., LINE).
-- `latest` – Cache for the most recent bulletin ID.
+- `latest` – Cache for the most recent bulletin issue ID.
 - `.github/workflows/` – GitHub Actions configurations for scheduled automation.
 
 ## Dependencies
@@ -76,7 +76,7 @@ This project uses **GitHub Actions** to schedule and automate tasks. Scripts wil
 
 ## 使用方式
 
-1. 確保使用的環境支援 Bash Shell 腳本，並已裝妥上述「環境需求 § Shell Script」一節中列出的套件。
+1. 確保使用的環境支援執行 Bash Shell 腳本，並已裝妥上述「環境需求 § Shell Script」一節中列出的套件。
 2. 執行 `updateLatest.sh` 檢查有無新公告。
 3. 執行 `fetch.sh` 擷取最新公告。
 4. 執行 `broadcast.sh` 將公告推播至其他平臺。
