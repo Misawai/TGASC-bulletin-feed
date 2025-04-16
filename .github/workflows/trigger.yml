@@ -12,11 +12,12 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  # This workflow contains a single job called "build-and-fetch"
+  build-and-fetch:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     environment: production
+    
     # Steps represent a sequence of tasks that will be executed as part of the job
     permissions:
       contents: write
@@ -29,13 +30,17 @@ jobs:
 
       - name: setup-htmlq
         uses: remarkablemark/setup-htmlq@v2.1.4
-      - name: install jq
-        run: sudo apt-get install jq
+      
+      # jq is pre-installed  
+      # - name: install jq
+      #   run: sudo apt-get install jq
         
       - name: check bulletin update
         run: ./updateLatest.sh
+        
       - name: fetch bulletin
         run: ./fetch.sh
+        
       - name: broadcast to chatbot
         env:
           CHANNEL_TOKEN: ${{ secrets.LINE_OFFICIAL_ACCOUNT_CHANNEL_ACCESS_TOKEN }}
@@ -46,5 +51,5 @@ jobs:
         with:
           add: '["latest"]'
           default_author: github_actions
-          message: 'Github Action automatic updates'
+          message: 'latest: Github Action automatic updates cache'
 

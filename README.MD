@@ -6,9 +6,9 @@
 
 ## 📁 Project Structure
 
-- `updateLatest.sh` – Check for new bulletin and updates the cache with the latest bulletin ID.
-- `fetch.sh` – Fetches the latest bulletins from the TGASC website.
-- `broadcast.sh` –  Sends bulletins to external platforms (e.g., LINE).
+- `updateLatest.sh` – Check for new bulletin and updates the cache with the latest issue ID.
+- `fetch.sh` – Fetches the latest bulletin issue from the TGASC website.
+- `broadcast.sh` –  Sends the latest bulletin issue to external platforms (e.g., LINE).
 - `latest` – Cache for the most recent bulletin ID.
 - `.github/workflows/` – GitHub Actions configurations for scheduled automation.
 
@@ -32,8 +32,8 @@
 ## ⚙️ Usage
 
 1. Make sure your environment supports basic Bash shell scripting, with shell scripts dependencies noted installed.
-3. Run `updateLatest.sh` to check for the latest bulletin. If exists, update `latest` .
-4. Run `fetch.sh` to retrieve the latest bulletin.
+3. Run `updateLatest.sh` to check for the latest bulletin issue. If exists, update `latest` .
+4. Run `fetch.sh` to retrieve the latest bulletin issue.
 5. Run `broadcast.sh` to send broadcast message to chatbot services.
 
 ## 🔄 Automation
