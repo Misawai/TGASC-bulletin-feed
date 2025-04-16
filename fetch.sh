@@ -24,7 +24,7 @@ sed -i "1a\\" message.txt
 
 # conditional statement for distinguishing if the new bulletin is a pure article or not
 if [ -z "$(<./temp.txt htmlq article | htmlq -r div.column.full -t | tr -d '\n''\t')" ]; then \
-# if after remove div.column.full still have any character, consider as pure article, without any links
+# if after remove div.column.full still have any character, consider as pure article, without links
 	<./temp.txt htmlq article -p -t| tr -s '\n''\t' >>message.txt
 	exit 0;# exit successfully
 else <./temp.txt htmlq article | htmlq -r div.column.full -t | tr -s '\n''\t' | sed '1{/^[[:space:]]*$/d}; ${/^[[:space:]]*$/d}; s/^[[:space:]]*//; s/[[:space:]]*$//' >>message.txt;
@@ -42,4 +42,4 @@ paste <(htmlq -t a <./temp2.txt) <(htmlq -a href a <./temp2.txt) >>message.txt
 # add new line for prettify
 sed -i -e '$a\' message.txt
 
-echo -e "童軍總會官網公告連結: https://www.scout.org.tw/news_detail/${latest}\n(本訊息擷自中華民國童軍總會官網，並由中華民國童軍總會官網公告通知小助手官方帳號提供)" >>message.txt
+echo -e "------\n童軍總會官網公告連結: https://www.scout.org.tw/news_detail/${latest}\n(本訊息擷自中華民國童軍總會官網 ，並由「8 乎你知——童軍總會官網公告非官方推播」Line 官方帳號提供)" >>message.txt

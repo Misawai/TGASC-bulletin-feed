@@ -1,21 +1,39 @@
-# TGASC Bulletin Feed
+# TGASC Bulletin Feed -- The 8th Feed -- A non-official bulletin feed of TGASC website
 
-**TGASC Bulletin Feed** is a collection of shell scripts designed to fetch and manage bulletin announcements from the official website of The General Association of the Scouts of China (TGASC). This tool is useful for automatically retrieving and broadcasting updates, such as through a LINE Official Account.
+###### 正體中文版說明請往下滑。Scroll down for Traditional Chinese version.
+**The 8th Feed** is a collection of shell scripts designed to fetch and manage bulletin announcements from the official website of The General Association of the Scouts of China (TAIWAN) (TGASC-TAIWAN), initiated by James Kuo-Ping Lo -- a member of the Rover Crew of St. Viator Catholic High School, Troop 8, Taichung City Council. This tool is useful for automatically retrieving and broadcasting updates, such as through a LINE Official Account.
 
 ## 📁 Project Structure
 
+- `updateLatest.sh` – Check for new bulletin and updates the cache with the latest bulletin ID.
 - `fetch.sh` – Fetches the latest bulletins from the TGASC website.
-- `updateLatest.sh` – Updates the cached version of the latest bulletin.
 - `broadcast.sh` –  Sends bulletins to external platforms (e.g., LINE).
-- `latest/` – Directory for storing the most recent bulletin content.
+- `latest` – Cache for the most recent bulletin ID.
 - `.github/workflows/` – GitHub Actions configurations for scheduled automation.
+
+## 📚 Dependencies
+
+### 🐚 Shell Scripts
+
+- [`awk`](https://www.gnu.org/software/gawk/)
+- [`Bash`](https://www.gnu.org/software/bash/)
+- [`cURL`](https://github.com/curl/curl)
+- [`htmlq`](https://github.com/mgdm/htmlq)
+- [`jq`](https://github.com/jqlang/jq)
+- [`sed`](https://www.gnu.org/software/sed/)
+
+### 🌊 Workflow
+
+- [`actions/checkout@v4`](https://github.com/actions/checkout)
+- [`EndBug/add-and-commit@v9.1.4`](https://github.com/EndBug/add-and-commit)
+- [`remarkablemark/setup-htmlq@v2.1.4`](https://github.com/remarkablemark/setup-htmlq)
 
 ## ⚙️ Usage
 
-1. Make sure your environment supports basic shell scripting (e.g., Linux/macOS or WSL).
-2. Run `fetch.sh` to retrieve the latest bulletin.
-3. Run `updateLatest.sh` to update the `latest/` folder.
-4. Run `broadcast.sh` to send announcements to a remote service.
+1. Make sure your environment supports basic Bash shell scripting.
+2. Run `updateLatest.sh` to check for the latest bulletin. If exists, update `latest` .
+3. Run `fetch.sh` to retrieve the latest bulletin.
+4. Run `broadcast.sh` to send broadcast message to chatbot services.
 
 ## 🔄 Automation
 
@@ -26,24 +44,41 @@ This project uses **GitHub Actions** to schedule and automate tasks. Scripts wil
 - [Misawai](https://github.com/Misawai) (James Kuo-Ping Lo)
 
 ----
-# 中華民國童軍總會官網公告通知小助手（TGASC Bulletin Feed）
+# 8 乎你知——童軍總會官網公告非官方推播（The 8th Feed）
 
-**中華民國童軍總會官網公告通知小助手（TGASC Bulletin Feed）** 是一套用於自動擷取中華民國童軍總會官網公告資訊的 Shell 腳本工具。這個專案可以定期抓取公告，並可配合 LINE 官方帳號等平臺推播使用。
+**8 乎你知——童軍總會官網公告非官方推播（The 8th Feed）** 由臺中市第 8 團私立衛道中學東君羅浮群 James Kuo-Ping Lo 伙伴開發，是一套用於自動擷取中華民國童軍總會官網公告資訊的 Shell 腳本工具。這個工具可以定期抓取公告，並配合 LINE 官方帳號等平臺推播使用。
 
 ## 📁 專案結構
 
-- `fetch.sh` – 從 TGASC 官網擷取最新公告內容。
-- `updateLatest.sh` – 更新最新公告的快取資料。
-- `broadcast.sh` – 將公告內容推播至其他平台（如 LINE）。
-- `latest/` – 儲存最新公告內容的資料夾。
+- `updateLatest.sh` – 檢查有無新公告，並更新最新公告序號的快取檔。
+- `fetch.sh` – 從中華民國童軍總會官網擷取最新公告內容。
+- `broadcast.sh` – 將公告內容推播至其他平臺（如 LINE）。
+- `latest` – 儲存最新公告序號的快取檔案。
 - `.github/workflows/` – GitHub Actions 自動化流程設定。
+
+## 📚 環境需求
+
+### 🐚 Shell Scripts
+
+- [`awk`](https://www.gnu.org/software/gawk/)
+- [`Bash`](https://www.gnu.org/software/bash/)
+- [`cURL`](https://github.com/curl/curl)
+- [`htmlq`](https://github.com/mgdm/htmlq)
+- [`jq`](https://github.com/jqlang/jq)
+- [`sed`](https://www.gnu.org/software/sed/)
+
+### 🌊 Workflow
+
+- [`actions/checkout@v4`](https://github.com/actions/checkout)
+- [`EndBug/add-and-commit@v9.1.4`](https://github.com/EndBug/add-and-commit)
+- [`remarkablemark/setup-htmlq@v2.1.4`](https://github.com/remarkablemark/setup-htmlq)
 
 ## ⚙️ 使用方式
 
-1. 確保使用的環境支援 Shell 腳本（如 macOS、Linux 或 Windows 的 WSL）。
-2. 執行 `fetch.sh` 擷取最新公告。
-3. 執行 `updateLatest.sh` 更新快取內容。
-4. 執行 `broadcast.sh` 將公告推播至其他平台。
+1. 確保使用的環境支援 Bash Shell 腳本。
+2. 執行 `updateLatest.sh` 檢查有無新公告。若有，則更新快取內容。
+3. 執行 `fetch.sh` 擷取最新公告。
+4. 執行 `broadcast.sh` 將公告推播至其他平臺。
 
 ## 🔄 自動化作業
 
