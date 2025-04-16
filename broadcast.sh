@@ -17,7 +17,7 @@ if [ -z "$1" ]; then
   echo "Access token is missing!"
   exit 1
 else 
-	echo "There is a access token.";
+	echo "There is an access token.";
 fi
 
 echo "Reading message body."
