@@ -15,6 +15,7 @@ fi
 # read the latest bulletin
 echo "Reading the latest bulletin issue number."
 latest=$(<./latest)
+((latest--))# The previous one is the latest article.
 
 # get the latest paragraph
 echo "Connecting to https://www.scout.org.tw/news_detail/${latest}..."
