@@ -35,28 +35,29 @@ if [ -z "$(<./temp.txt htmlq article | htmlq -r div.column.full -t | tr -d '\n''
 	echo "It's a message without button."
 	<./temp.txt htmlq article -p -t| tr -s '\n''\t' >>message.txt
 	echo "Message processed."
-	exit 0;# exit successfully
+	
 else 
 	echo "It's a message with button."	
 	<./temp.txt htmlq article | htmlq -r div.column.full -t | tr -s '\n''\t' | sed '1{/^[[:space:]]*$/d}; ${/^[[:space:]]*$/d}; s/^[[:space:]]*//; s/[[:space:]]*$//' >>message.txt
 	echo "Message processed.";
+	
+	# prepeare for print out links
+	echo "Prepearing for printing out links."
+	<./temp.txt htmlq article | htmlq div.column.full >temp2.txt
+
+	# add new line for prettify
+	echo "Add a new line into message bodytext for prettify."
+	sed -i -e '$a\' message.txt
+
+	# append links at the end of message
+	paste <(htmlq -t a <./temp2.txt) <(htmlq -a href a <./temp2.txt) >>message.txt
+	echo "Links combined."
+
+	# add new line for prettify
+	echo "Add a new line into message bodytext for prettify."
+	sed -i -e '$a\' message.txt
 fi
-
-# prepeare for print out links
-echo "Prepearing for printing out links."
-<./temp.txt htmlq article | htmlq div.column.full >temp2.txt
-
-# add new line for prettify
-echo "Add a new line into message bodytext for prettify."
-sed -i -e '$a\' message.txt
-
-# append links at the end of message
-paste <(htmlq -t a <./temp2.txt) <(htmlq -a href a <./temp2.txt) >>message.txt
-echo "Links combined."
-
-# add new line for prettify
-echo "Add a new line into message bodytext for prettify."
-sed -i -e '$a\' message.txt
-
 echo "Adding footer."
 echo -e "------\n童軍總會官網公告連結: https://www.scout.org.tw/news_detail/${latest}\n(本訊息擷自中華民國童軍總會官網，並由「8 乎你知——童軍總會官網公告非官方推播」" >>message.txt
+
+exit 0;# exit successfully
