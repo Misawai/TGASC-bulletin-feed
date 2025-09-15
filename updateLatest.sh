@@ -18,11 +18,17 @@ if [ "${statusCode}" == "200" ]; then
 	echo "Returned ${statusCode}. Found page exists."
 	echo "${latestnum}" >./latest
 	echo "${statusCode}" >status
-	echo "The current issue ID in cache now is #${latestnum}"
+	echo "The current issue ID in cache now is #${latestnum}."
 	exit 0;
 elif [ "$statusCode" == "404" ]; then
 	echo "Returned ${statusCode}. May have reached to the latest bulletin issue."
 	echo "${statusCode}" >status
+ 	if [ "${latestnum}" -ge "355" -a "${latestnum}" -le "369" ]; then
+  		echo "Issue ID within known existing range. Automatically rolling to the next one."
+		((latestnum++))
+		echo "${latestnum}" >./latest
+ 		echo "The current issue ID in cache now is #${latestnum}."
+	fi
 	exit 0;
 else 
 	echo "Returned ${statusCode}, which is neither 200 nor 404. Please conduct further check."
