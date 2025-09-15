@@ -46,10 +46,10 @@ This project uses **GitHub Actions** to schedule and automate tasks. Scripts wil
 
 ## Thanks
 
-- [Staler2019](https://github.com/Staler2019)(JiaJyun Yang)
+- [Staler2019](https://github.com/Staler2019) (JiaJyun Yang)
 
-- The [Hacking Thursday](https://github.com/hacking-thursday)(H4) Community, including but not only…
-- - [brlin-tw](https://github.com/brlin-tw)(林博仁 Buo-ren Lin)
+- The [Hacking Thursday](https://github.com/hacking-thursday) (H4) Community, including but not only…
+- - [brlin-tw](https://github.com/brlin-tw) (林博仁 Buo-ren Lin)
   -
 
 ----
@@ -99,9 +99,9 @@ This project uses **GitHub Actions** to schedule and automate tasks. Scripts wil
 
 ## 特別感謝
 
-- [Staler2019](https://github.com/Staler2019)(JiaJyun Yang)
+- [Staler2019](https://github.com/Staler2019) (JiaJyun Yang)
 
-- [Hacking Thursday](https://github.com/hacking-thursday)(H4) 社群，包含但不限於…
-- - [brlin-tw](https://github.com/brlin-tw)(林博仁 Buo-ren Lin)
+- [Hacking Thursday](https://github.com/hacking-thursday) (H4) 社群，包含但不限於…
+- - [brlin-tw](https://github.com/brlin-tw) (林博仁 Buo-ren Lin)
   -
 
