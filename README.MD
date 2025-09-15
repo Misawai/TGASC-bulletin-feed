@@ -44,6 +44,14 @@ This project uses **GitHub Actions** to schedule and automate tasks. Scripts wil
 
 - [Misawai](https://github.com/Misawai) (James Kuo-Ping Lo)
 
+## Thanks
+
+- [Staler2019](https://github.com/Staler2019)(JiaJyun Yang)
+
+- The [Hacking Thursday](https://github.com/hacking-thursday)(H4) Community, including but not only…
+- - [brlin-tw](https://github.com/brlin-tw)(林博仁 Buo-ren Lin)
+  -
+
 ----
 # 8 乎你知——童軍總會官網公告非官方推播（The 8th Feed）
 
@@ -88,3 +96,12 @@ This project uses **GitHub Actions** to schedule and automate tasks. Scripts wil
 ## 貢獻者
 
 - [Misawai](https://github.com/Misawai)（James Kuo-Ping Lo）
+
+## 特別感謝
+
+- [Staler2019](https://github.com/Staler2019)(JiaJyun Yang)
+
+- [Hacking Thursday](https://github.com/hacking-thursday)(H4) 社群，包含但不限於…
+- - [brlin-tw](https://github.com/brlin-tw)(林博仁 Buo-ren Lin)
+  -
+
