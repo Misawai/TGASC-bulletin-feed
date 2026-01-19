@@ -22,13 +22,25 @@ if [ "${statusCode}" == "200" ]; then
 	exit 0;
 elif [ "$statusCode" == "404" ]; then
 	echo "Returned ${statusCode}. May have reached to the latest bulletin issue."
-	echo "${statusCode}" >status
- 	if [ "${latestnum}" -ge "355" -a "${latestnum}" -le "369" ]; then
-  		echo "Issue ID within known existing range. Automatically rolling to the next one."
-		((latestnum++))
-		echo "${latestnum}" >./latest
- 		echo "The current issue ID in cache now is #${latestnum}."
-	fi
+	
+	# Forward probe: check if any bulletin exists within the next PROBE_RANGE numbers
+	echo "Starting forward probe to find next bulletin..."
+	PROBE_RANGE=50
+	for ((i=1; i<=PROBE_RANGE; i++)); do
+		probeNum=$((latestnum + i))
+		probeStatus=$(curl -s -I https://www.scout.org.tw/news_detail/"${probeNum}" | grep "^HTTP\/" | awk '{print $2}')
+		
+		if [ "${probeStatus}" == "200" ]; then
+			echo "Found bulletin #${probeNum} exists!"
+			echo "$((probeNum + 1))" >./latest
+			echo "200" >status
+			echo "The current issue ID in cache now is #$((probeNum + 1))."
+			exit 0
+		fi
+	done
+	
+	echo "No new bulletin found within probe range of ${PROBE_RANGE}."
+	echo "404" >status
 	exit 0;
 else 
 	echo "Returned ${statusCode}, which is neither 200 nor 404. Please conduct further check."
